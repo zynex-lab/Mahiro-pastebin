@@ -211,6 +211,7 @@ pre {
 
   .how-to h4 {
     font-size: 16px;
+    margin-top: -50px;
     margin-bottom: 8px;
     color: #2f81f7;
   }
@@ -232,13 +233,13 @@ pre {
 }
 
 button {
-  background: linear-gradient(to bottom
-  , #01c7fc, #0061fe); 
+  background: #0061fe; 
   border: none;
   padding: 10px 18px;
   color: white;
   margin-right: 10px;
   margin-top: 10px;
+  margin-bottom: 30px;
   border-radius: 20px;
   cursor: pointer;
   transition: background 0.2s;
