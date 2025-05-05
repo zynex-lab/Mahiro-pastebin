@@ -33,7 +33,7 @@
         <img src="https://img2.pic.in.th/pic/a177198dbdec76cca55cc75482811583.png" alt="Script Header Image" class="script-banner"onclick="openImagePopup(this.src)">
       </div>
     <h3><i class="fab fa-js-square"></i> สคริปต์หา Token Discord</h3>
-    <pre id="code">
+    <pre id="code1">
   javascript:(function(){
     location.reload();
     var i = document.createElement('iframe');
@@ -41,7 +41,7 @@
     alert(i.contentWindow.localStorage.token);
   })()
     </pre>
-    <button onclick="copyCode()">คัดลอกโค้ด</button>
+    <button onclick="copyCode('code1')">คัดลอกโค้ด</button>
   </div>
 
  <div class="copy-popup" id="copyPopup">
@@ -49,48 +49,58 @@
     <p>คัดลอกเรียบร้อย!</p>
   </div>
 
-      <div class="how-to">
-        <h4 onclick="toggleHowTo()" style="cursor: pointer;"><i class="fas fa-question-circle"></i> วิธีการใช้บน iOS คลิกเพื่ออ่าน <span id="toggle-icon">+</span></h4>
-        <div id="howToContent" style="display: none;">
-          <ol>
-      <li>คัดลอกโค้ดจากด้านบน</li>
-      <li>เปิด Safari แล้วเข้าไปที่หน้าเว็บของ Discord</li>
-      <li>แตะที่ปุ่มแชร์ (Share) ที่ด้านล่างของหน้าจอ</li>
-      <li>เลือก "เพิ่มไปยังรายการโปรด" (Add to Favorites)</li>
-      <li>ในหน้าตั้งค่า ให้ลบลิงก์ออก แล้ววางโค้ดที่คัดลอกไว้ลงในช่องลิงก์</li>
-      <li>ตั้งชื่ออะไรก็ได้เพื่อให้จำง่าย แล้วกดบันทึก</li>
-      <li>เวลาจะใช้งาน ให้แตะที่ไอคอนหนังสือด้านล่าง</li>
-      <li>ไปที่ "รายการโปรด" แล้วเลือกที่คั่นที่สร้างไว้</li>
-      <li>โค้ดจะทำงานและแสดง Token ในหน้าต่างแจ้งเตือน</li>
-    </ol>
-        </div>
+  <div class="how-to">
+    <h4 onclick="toggleHowTo('howToContent1', 'toggle-icon1')" style="cursor: pointer;">
+      <i class="fas fa-question-circle"></i> วิธีการใช้บน iOS คลิกเพื่ออ่าน <span id="toggle-icon1">+</span>
+    </h4>
+    <div id="howToContent1" style="display: none;">
+      <ol>
+        <li>คัดลอกโค้ดจากด้านบน</li>
+        <li>เปิด Safari แล้วเข้าไปที่หน้าเว็บของ Discord</li>
+        <li>แตะที่ปุ่มแชร์ (Share) ที่ด้านล่างของหน้าจอ</li>
+        <li>เลือก "เพิ่มไปยังรายการโปรด" (Add to Favorites)</li>
+        <li>ในหน้าตั้งค่า ให้ลบลิงก์ออก แล้ววางโค้ดที่คัดลอกไว้ลงในช่องลิงก์</li>
+        <li>ตั้งชื่ออะไรก็ได้เพื่อให้จำง่าย แล้วกดบันทึก</li>
+        <li>เวลาจะใช้งาน ให้แตะที่ไอคอนหนังสือด้านล่าง</li>
+        <li>ไปที่ "รายการโปรด" แล้วเลือกที่คั่นที่สร้างไว้</li>
+        <li>โค้ดจะทำงานและแสดง Token ในหน้าต่างแจ้งเตือน</li>
+      </ol>
+    </div>
   </div>
-
+  
    <!-- สคริปต์ 2 -->
       <div id="scriptexample" class="container">
         <div class="script-header">
           <img src="https://img5.pic.in.th/file/secure-sv1/-Copy.png" alt="Script Header Image" class="script-banner"onclick="openImagePopup(this.src)">
         </div>
       <h3><i class="fab fa-python"></i> โค้ด python บอทเม็ดม่วง</h3>
-      <pre id="code">
-
-        @client.event
-        async def on_ready():
-            print(f'Logged in as {client.user}')
-            await client.change_presence(
-                activity=discord.Streaming(
-                    name='TWITCH',
-                    url='https://www.twitch.tv/ชื่อช่องของคุณ'
-                )
-            )
-      </pre>
-      <button onclick="copyCode()">คัดลอกโค้ด</button>
+        <pre id="code2">
+  @client.event
+    async def on_ready():
+      print(f'Logged in as {client.user}')
+        await client.change_presence(activity=discord.Streaming(name='TWITCH', url='https://www.twitch.tv/ชื่อช่องของคุณ'))
+        </pre>
+      <button onclick="copyCode('code2')">คัดลอกโค้ด</button>
     </div>
 
    <div class="copy-popup" id="copyPopup">
       <div class="checkmark">✓</div>
       <p>คัดลอกเรียบร้อย!</p>
     </div>
+
+  <div class="how-to">
+    <h4 onclick="toggleHowTo('howToContent2', 'toggle-icon2')" style="cursor: pointer;">
+      <i class="fas fa-question-circle"></i> วิธีการใช้งาน คลิกเพื่ออ่าน <span id="toggle-icon2">+</span>
+    </h4>
+    <div id="howToContent2" style="display: none;">
+      <ol>
+        <li>วางโค้ดนี้ในไฟล์ Python ของบอทคุณ</li>
+        <li>เปลี่ยนคำว่า <code>`ชื่อช่องของคุณ`</code> ให้เป็นชื่อช่อง Twitch จริง<br>หรือ Copy ลิงก์มาวางก็ได้</li>
+        <li>รันบอทด้วย Python</li>
+        <li>สถานะบอทจะขึ้นว่า “กำลังสตรีม TWITCH”</li>
+      </ol>
+    </div>
+  </div>
 
   <div id="imgPopup" class="img-popup" onclick="closeImagePopup()">
     <img id="popupImg" src="" alt="Preview">
@@ -130,8 +140,8 @@
       });
     });
 
-    function copyCode() {
-      var code = document.getElementById('code');
+    function copyCode(codeId) {
+      var code = document.getElementById(codeId);
       var range = document.createRange();
       range.selectNode(code);
       window.getSelection().removeAllRanges();
@@ -147,31 +157,14 @@
       }, 2000);
     }
 
-    function downloadCode() {
-      var code = document.getElementById('code').textContent;
-      var blob = new Blob([code], { type: 'text/html' });
-      var link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'script.html';
-      link.click();
-    }
-
-    function toggleMenu() {
-      const menu = document.querySelector('nav ul');
-      menu.classList.toggle('show');
-    }
-
-    function toggleHowTo() {
-      const content = document.getElementById('howToContent');
-      const icon = document.getElementById('toggle-icon');
+    function toggleHowTo(contentId, iconId) {
+      const content = document.getElementById(contentId);
+      const icon = document.getElementById(iconId);
 
       if (content.style.display === 'none') {
         content.style.display = 'block';
         icon.textContent = '−';
-
         content.classList.remove('bounce-in');
-
-
         void content.offsetWidth;
         content.classList.add('bounce-in');
       } else {
@@ -179,7 +172,7 @@
         icon.textContent = '+';
       }
     }
-
+    
     function openImagePopup(src) {
       const popup = document.getElementById('imgPopup');
       const popupImg = document.getElementById('popupImg');
