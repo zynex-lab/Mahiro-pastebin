@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เว็บไซต์แชร์สคริปต์</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">MahiroScripts</div>
+    <nav id="menu">
+      <div class="dropdown">
+        <a href="https://discord.gg/dHRbHAFFnQ" class="discord-link"><i class="fab fa-discord"></i> Discord</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="center-screen anim-fade-in">
+    <h3>Pastebin</h3>
+    <p class="dev-tagline">รวมสคริปต์และอื่นๆที่แจก!</p>
+    <div class="dev-icon">
+      <img src="https://img2.pic.in.th/pic/IMG_0009e98a0af4b1ac7428.png" alt="Developer Icon" class="dev-icon">
+    </div>
+    <a href="#scriptexample" class="scroll-down">เลื่อนลงเพื่อดูเนื้อหา</a>
+  </div>
+
+    <!-- สคริปต์ 1 -->
+    <div id="scriptexample" class="container">
+      <div class="script-header">
+        <img src="https://img2.pic.in.th/pic/a177198dbdec76cca55cc75482811583.png" alt="Script Header Image" class="script-banner"onclick="openImagePopup(this.src)">
+      </div>
+    <h3><i class="fab fa-js-square"></i> สคริปต์หา Token Discord</h3>
+    <pre id="code">
+  javascript:(function(){
+    location.reload();
+    var i = document.createElement('iframe');
+    document.body.appendChild(i);
+    alert(i.contentWindow.localStorage.token);
+  })()
+    </pre>
+    <button onclick="copyCode()">คัดลอกโค้ด</button>
+  </div>
+
+ <div class="copy-popup" id="copyPopup">
+    <div class="checkmark">✓</div>
+    <p>คัดลอกเรียบร้อย!</p>
+  </div>
+
+      <div class="how-to">
+        <h4 onclick="toggleHowTo()" style="cursor: pointer;"><i class="fas fa-question-circle"></i> วิธีการใช้บน iOS คลิกเพื่ออ่าน <span id="toggle-icon">+</span></h4>
+        <div id="howToContent" style="display: none;">
+          <ol>
+      <li>คัดลอกโค้ดจากด้านบน</li>
+      <li>เปิด Safari แล้วเข้าไปที่หน้าเว็บของ Discord</li>
+      <li>แตะที่ปุ่มแชร์ (Share) ที่ด้านล่างของหน้าจอ</li>
+      <li>เลือก "เพิ่มไปยังรายการโปรด" (Add to Favorites)</li>
+      <li>ในหน้าตั้งค่า ให้ลบลิงก์ออก แล้ววางโค้ดที่คัดลอกไว้ลงในช่องลิงก์</li>
+      <li>ตั้งชื่ออะไรก็ได้เพื่อให้จำง่าย แล้วกดบันทึก</li>
+      <li>เวลาจะใช้งาน ให้แตะที่ไอคอนหนังสือด้านล่าง</li>
+      <li>ไปที่ "รายการโปรด" แล้วเลือกที่คั่นที่สร้างไว้</li>
+      <li>โค้ดจะทำงานและแสดง Token ในหน้าต่างแจ้งเตือน</li>
+    </ol>
+        </div>
+  </div>
+  <div id="imgPopup" class="img-popup" onclick="closeImagePopup()">
+    <img id="popupImg" src="" alt="Preview">
+  </div>
+
+  <footer>
+    <p>© 2025 Mahiro. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const observerOptions = {
+        root: null, 
+        rootMargin: '0px',
+        threshold: 0.1, 
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const elementsToAnimate = document.querySelectorAll('.anim-slide-up, .anim-fade-in');
+      elementsToAnimate.forEach(element => {
+        observer.observe(element);
+      });
+
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('nav ul.menu');
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('show');
+      });
+    });
+
+    function copyCode() {
+      var code = document.getElementById('code');
+      var range = document.createRange();
+      range.selectNode(code);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+
+      var popup = document.getElementById('copyPopup');
+      popup.classList.add('show');
+
+      setTimeout(() => {
+        popup.classList.remove('show');
+      }, 2000);
+    }
+
+    function downloadCode() {
+      var code = document.getElementById('code').textContent;
+      var blob = new Blob([code], { type: 'text/html' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'script.html';
+      link.click();
+    }
+
+    function toggleMenu() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('show');
+    }
+
+    function toggleHowTo() {
+      const content = document.getElementById('howToContent');
+      const icon = document.getElementById('toggle-icon');
+
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '−';
+
+        content.classList.remove('bounce-in');
+
+
+        void content.offsetWidth;
+        content.classList.add('bounce-in');
+      } else {
+        content.style.display = 'none';
+        icon.textContent = '+';
+      }
+    }
+
+    function openImagePopup(src) {
+      const popup = document.getElementById('imgPopup');
+      const popupImg = document.getElementById('popupImg');
+      popupImg.src = src;
+      popup.style.display = 'flex';
+    }
+
+    function closeImagePopup() {
+      document.getElementById('imgPopup').style.display = 'none';
+    }
+    
+  </script>
+</body>
+</html>
