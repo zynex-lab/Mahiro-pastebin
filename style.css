@@ -16,7 +16,6 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Header */
 header {
   background-color: #111;
   padding: 15px 20px;
@@ -97,7 +96,6 @@ nav ul.show {
   box-shadow: 0 2px 6px rgba(114, 137, 218, 0.4);
 }
 
-/* ส่วนกลางหน้าจอ */
 .center-screen {
   text-align: center;
   padding: 80px 20px;
@@ -130,8 +128,6 @@ nav ul.show {
   text-decoration: none;
   transition: background 0.2s;
 }
-
-/* Script Example */
 
 .scriptexample {
   background-color: #2b2b2b;
@@ -210,7 +206,8 @@ pre {
   }
 
   .how-to h4 {
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 400;
     margin-top: -50px;
     margin-bottom: 8px;
     color: #2f81f7;
