@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahiro</title>
+  <title>เว็บไซต์แชร์สคริปต์</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -65,6 +65,33 @@
     </ol>
         </div>
   </div>
+
+   <!-- สคริปต์ 2 -->
+      <div id="scriptexample" class="container">
+        <div class="script-header">
+          <img src="https://img5.pic.in.th/file/secure-sv1/-Copy.png" alt="Script Header Image" class="script-banner"onclick="openImagePopup(this.src)">
+        </div>
+      <h3><i class="fab fa-python"></i> โค้ด python บอทเม็ดม่วง</h3>
+      <pre id="code">
+
+        @client.event
+        async def on_ready():
+            print(f'Logged in as {client.user}')
+            await client.change_presence(
+                activity=discord.Streaming(
+                    name='TWITCH',
+                    url='https://www.twitch.tv/ชื่อช่องของคุณ'
+                )
+            )
+      </pre>
+      <button onclick="copyCode()">คัดลอกโค้ด</button>
+    </div>
+
+   <div class="copy-popup" id="copyPopup">
+      <div class="checkmark">✓</div>
+      <p>คัดลอกเรียบร้อย!</p>
+    </div>
+
   <div id="imgPopup" class="img-popup" onclick="closeImagePopup()">
     <img id="popupImg" src="" alt="Preview">
   </div>
